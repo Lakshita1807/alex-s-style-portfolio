@@ -1,0 +1,250 @@
+/* === Typography === */
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* === Color Scheme === */
+:root {
+  --primary-color: #2C3E50;
+  --accent-color: #E67E22;
+  --background-color: #FDFEFE;
+  --text-color: #333;
+  --light-gray: #ECF0F1;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.project {
+  background-color: var(--light-gray);
+  border: 1px solid var(--accent-color);
+}
+
+/* === Layout === */
+
+/* Header and Sections */
+header, section, footer {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Responsive Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+}
+
+/* Flexbox for About Section */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* Buttons */
+button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #d35400; /* Slightly darker accent */
+  transform: scale(1.05);
+}
+
+/* Links inside projects */
+.project a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.project a:hover {
+  opacity: 0.8;
+}
+/* Keyframes for fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to each project thumbnail */
+.project {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Staggered animation using nth-child */
+.project:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.project:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.project:nth-child(3) {
+  animation-delay: 0.6s;
+}
+/* Add more delays as needed for additional thumbnails */
+/* === Mobile Devices (max-width: 768px) === */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  p  { font-size: 0.95rem; }
+
+  header, section, footer {
+    padding: 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  form {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* === Tablets (max-width: 1024px) === */
+@media (max-width: 1024px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.75rem; }
+  p  { font-size: 1rem; }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  form {
+    max-width: 90%;
+  }
+}
+
+/* === Desktop Screens (min-width: 1025px) === */
+@media (min-width: 1025px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  p  { font-size: 1.05rem; }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  form {
+    max-width: 500px;
+  }
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: stretch;
+}
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  p  { font-size: 0.95rem; }
+}
+@media (max-width: 768px) {
+  form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  input, textarea {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
